@@ -95,7 +95,7 @@ async def main():
     await start_web_server()
     
     # 👇 PASTE YOUR BOT TOKEN HERE 👇
-    await bot.start('MTU2ODQwNTgyMzEyOTEyNTAzNQ.GUYuix.fVTtyftzGIkSTBrqkAoEn6rSSyagSQdjOvzjfM')
+    await bot.start('')
 
 if __name__ == '__main__':
     asyncio.run(main())
