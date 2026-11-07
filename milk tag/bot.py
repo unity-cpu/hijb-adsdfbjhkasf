@@ -91,11 +91,15 @@ async def start_web_server():
     print(f"🌐 Web server running on port {port} - ready for the website!")
 
 async def main():
-    # Start the web server first, then run the bot
     await start_web_server()
     
-    # 👇 PASTE YOUR BOT TOKEN HERE 👇
-    await bot.start('MTU2ODQwNTgyMzEyOTEyNTAzNQ.G0KT3I.naPO3R0aGXlxkvHVltmFgveXbf5PnDTsL8LGs0')
+    # 👇 THIS READS THE TOKEN FROM RENDER'S SECURITY SETTINGS 👇
+    token = os.environ.get("DISCORD_TOKEN")
+    if not token:
+        print("❌ ERROR: DISCORD_TOKEN environment variable is missing!")
+        return
+        
+    await bot.start(token)
 
 if __name__ == '__main__':
     asyncio.run(main())
